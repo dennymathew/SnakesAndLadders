@@ -26,6 +26,13 @@
 		B0EAB922225BBC48005ED242 /* Dice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB91B225BBC48005ED242 /* Dice.mp3 */; };
 		B0EAB923225BBC48005ED242 /* Gameflow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB91C225BBC48005ED242 /* Gameflow.mp3 */; };
 		B0EAB924225BBC48005ED242 /* Move.wav in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB91D225BBC48005ED242 /* Move.wav */; };
+		B0EAB92C225BDC7A005ED242 /* dice_2.png in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB925225BDC79005ED242 /* dice_2.png */; };
+		B0EAB92D225BDC7A005ED242 /* Dice.png in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB926225BDC79005ED242 /* Dice.png */; };
+		B0EAB92E225BDC7A005ED242 /* dice_1.png in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB927225BDC7A005ED242 /* dice_1.png */; };
+		B0EAB92F225BDC7A005ED242 /* dice_5.png in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB928225BDC7A005ED242 /* dice_5.png */; };
+		B0EAB930225BDC7A005ED242 /* dice_3.png in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB929225BDC7A005ED242 /* dice_3.png */; };
+		B0EAB931225BDC7A005ED242 /* dice_6.png in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB92A225BDC7A005ED242 /* dice_6.png */; };
+		B0EAB932225BDC7A005ED242 /* dice_4.png in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB92B225BDC7A005ED242 /* dice_4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +69,13 @@
 		B0EAB91B225BBC48005ED242 /* Dice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Dice.mp3; path = Assets/Dice.mp3; sourceTree = SOURCE_ROOT; };
 		B0EAB91C225BBC48005ED242 /* Gameflow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Gameflow.mp3; path = Assets/Gameflow.mp3; sourceTree = SOURCE_ROOT; };
 		B0EAB91D225BBC48005ED242 /* Move.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Move.wav; path = Assets/Move.wav; sourceTree = SOURCE_ROOT; };
+		B0EAB925225BDC79005ED242 /* dice_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dice_2.png; path = Assets/dice_2.png; sourceTree = SOURCE_ROOT; };
+		B0EAB926225BDC79005ED242 /* Dice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Dice.png; path = Assets/Dice.png; sourceTree = SOURCE_ROOT; };
+		B0EAB927225BDC7A005ED242 /* dice_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dice_1.png; path = Assets/dice_1.png; sourceTree = SOURCE_ROOT; };
+		B0EAB928225BDC7A005ED242 /* dice_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dice_5.png; path = Assets/dice_5.png; sourceTree = SOURCE_ROOT; };
+		B0EAB929225BDC7A005ED242 /* dice_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dice_3.png; path = Assets/dice_3.png; sourceTree = SOURCE_ROOT; };
+		B0EAB92A225BDC7A005ED242 /* dice_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dice_6.png; path = Assets/dice_6.png; sourceTree = SOURCE_ROOT; };
+		B0EAB92B225BDC7A005ED242 /* dice_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dice_4.png; path = Assets/dice_4.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +152,13 @@
 		B0EAB90F225BB05D005ED242 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B0EAB927225BDC7A005ED242 /* dice_1.png */,
+				B0EAB925225BDC79005ED242 /* dice_2.png */,
+				B0EAB929225BDC7A005ED242 /* dice_3.png */,
+				B0EAB92B225BDC7A005ED242 /* dice_4.png */,
+				B0EAB928225BDC7A005ED242 /* dice_5.png */,
+				B0EAB92A225BDC7A005ED242 /* dice_6.png */,
+				B0EAB926225BDC79005ED242 /* Dice.png */,
 				B0EAB911225BB084005ED242 /* Gameboard.png */,
 				B0EAB913225BB3F2005ED242 /* Player1.png */,
 				B0EAB915225BB675005ED242 /* Player2.png */,
@@ -240,8 +261,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0EAB932225BDC7A005ED242 /* dice_4.png in Resources */,
+				B0EAB931225BDC7A005ED242 /* dice_6.png in Resources */,
 				B0EAB923225BBC48005ED242 /* Gameflow.mp3 in Resources */,
 				B0EAB924225BBC48005ED242 /* Move.wav in Resources */,
+				B0EAB92F225BDC7A005ED242 /* dice_5.png in Resources */,
 				B0EAB8F3225BA941005ED242 /* Main.storyboard in Resources */,
 				B0EAB8EA225BA941005ED242 /* GameScene.sks in Resources */,
 				B0EAB8F5225BA944005ED242 /* Assets.xcassets in Resources */,
@@ -249,8 +273,12 @@
 				B0EAB914225BB3F2005ED242 /* Player1.png in Resources */,
 				B0EAB8F8225BA944005ED242 /* LaunchScreen.storyboard in Resources */,
 				B0EAB920225BBC48005ED242 /* Ladder.wav in Resources */,
+				B0EAB92E225BDC7A005ED242 /* dice_1.png in Resources */,
+				B0EAB92D225BDC7A005ED242 /* Dice.png in Resources */,
 				B0EAB916225BB675005ED242 /* Player2.png in Resources */,
+				B0EAB92C225BDC7A005ED242 /* dice_2.png in Resources */,
 				B0EAB91F225BBC48005ED242 /* Lost.wav in Resources */,
+				B0EAB930225BDC7A005ED242 /* dice_3.png in Resources */,
 				B0EAB91E225BBC48005ED242 /* Intro.mp3 in Resources */,
 				B0EAB912225BB084005ED242 /* Gameboard.png in Resources */,
 				B0EAB8EC225BA941005ED242 /* Actions.sks in Resources */,

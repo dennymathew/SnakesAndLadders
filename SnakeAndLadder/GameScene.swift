@@ -69,8 +69,7 @@ class GameScene: SKScene {
         setupSounds()
         setupPlayers()
         
-        movePlayer(true, position: 7)
-        movePlayer(false, position: 25)
+        startGame()
     }
 }
 
@@ -228,6 +227,12 @@ extension GameScene {
                         self.run(self.snakeSound)
                     }
                 }
+                
+                self.moveFinished = true
+                self.isHumanTurn = false
+                self.flashTurn(false)
+                self.checkWin()
+                self.rollDice(false)
             }
         } else {
             self.computer.run(moveAction) {
@@ -250,7 +255,150 @@ extension GameScene {
                         self.run(self.snakeSound)
                     }
                 }
+                
+                self.moveFinished = true
+                self.isHumanTurn = true
+                self.flashTurn(true)
+                self.checkWin()
             }
+        }
+    }
+}
+
+//MARK: - Game Play
+extension GameScene {
+    
+    func rollDice(_ isHuman: Bool) {
+        
+        if isGameOver || isRolling || !moveFinished {
+            return
+        }
+        
+        moveFinished = false
+        isRolling = true
+        
+        self.run(self.diceSound)
+        self.enumerateChildNodes(withName: "Dice") { (diceNode, stop) in
+            diceNode.removeFromParent()
+        }
+        
+        var diceTextures = [SKTexture]()
+        
+        for i in 0 ..< 10 {
+            let random = GKRandomSource()
+            let dice3d6 = GKGaussianDistribution(randomSource: random, lowestValue: 1, highestValue: 6)
+            rolledDice = dice3d6.nextInt()
+            
+            let imageName = "dice_\(rolledDice)"
+            let diceTexture = SKTexture(imageNamed: imageName)
+            diceTextures.append(diceTexture)
+        }
+        
+        let dice = SKSpriteNode(imageNamed: "dice_1")
+        dice.name = "Dice"
+        let width = board.size.width/9
+        dice.size = CGSize(width: width, height: width)
+        
+        if isHuman {
+            dice.position = CGPoint(x: leftX, y: 0)
+        } else {
+            dice.position = CGPoint(x: rightX, y: 0)
+        }
+        
+        addChild(dice)
+        
+        //Animation
+        let diceAnimation = SKAction.animate(with: diceTextures, timePerFrame: 0.2)
+        dice.run(diceAnimation) {
+            
+            self.isRolling = false
+            
+            if isHuman {
+                if self.humanPosition + self.rolledDice  <= 100 {
+                    self.humanPosition += self.rolledDice
+                    self.movePlayer(true, position: CGFloat(self.humanPosition))
+                } else {
+                    self.moveFinished = true
+                    self.isHumanTurn = false
+                    self.flashTurn(false)
+                    self.rollDice(false)
+                }
+            } else {
+                if self.computerPosition + self.rolledDice  <= 100 {
+                    self.computerPosition += self.rolledDice
+                    self.movePlayer(false, position: CGFloat(self.computerPosition))
+                } else {
+                    self.moveFinished = true
+                    self.isHumanTurn = true
+                    self.flashTurn(true)
+                }
+            }
+        }
+    }
+    
+    func flashTurn(_ isHuman: Bool) {
+        
+        if isHuman {
+            computerLabel.removeAllActions()
+            computerLabel.alpha = 1
+            computerLabel.setScale(1)
+            humanLabel.run(SKAction(named: "Pulse")!)
+        } else {
+            humanLabel.removeAllActions()
+            humanLabel.alpha = 1
+            humanLabel.setScale(1)
+            computerLabel.run(SKAction(named: "Pulse")!)
+        }
+    }
+    
+    func startGame() {
+        
+        isHumanTurn = Int.random(in: 0...1000) % 2 == 0
+        
+        if !isHumanTurn {
+            flashTurn(false)
+            rollDice(false)
+        } else {
+            flashTurn(true)
+        }
+    }
+    
+    func checkWin() {
+        
+        if humanPosition == 100 {
+            isGameOver = true
+            displayWinLabel("You Won!")
+            resetLabel()
+        } else {
+            displayWinLabel("You Lost!")
+            resetLabel()
+        }
+    }
+    
+    func displayWinLabel(_ text: String) {
+        
+        let winLabel = SKLabelNode(fontNamed: "DiwanMishafi")
+        winLabel.fontSize = 80
+        winLabel.fontColor = .red
+        winLabel.text = text
+        winLabel.zPosition = ObjectZPosition.labels.rawValue
+        winLabel.run(SKAction(named: "Pulse")!)
+    }
+    
+    func resetLabel() {
+        humanLabel.removeAllActions()
+        humanLabel.alpha = 1
+        humanLabel.setScale(1)
+        
+        computerLabel.removeAllActions()
+        computerLabel.alpha = 1
+        computerLabel.setScale(1)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if isHumanTurn && !isGameOver && !isRolling && moveFinished {
+            rollDice(true)
         }
     }
 }
