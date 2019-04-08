@@ -16,6 +16,16 @@
 		B0EAB8F5225BA944005ED242 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB8F4225BA944005ED242 /* Assets.xcassets */; };
 		B0EAB8F8225BA944005ED242 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB8F6225BA944005ED242 /* LaunchScreen.storyboard */; };
 		B0EAB903225BA945005ED242 /* SnakeAndLadderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EAB902225BA945005ED242 /* SnakeAndLadderTests.swift */; };
+		B0EAB912225BB084005ED242 /* Gameboard.png in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB911225BB084005ED242 /* Gameboard.png */; };
+		B0EAB914225BB3F2005ED242 /* Player1.png in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB913225BB3F2005ED242 /* Player1.png */; };
+		B0EAB916225BB675005ED242 /* Player2.png in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB915225BB675005ED242 /* Player2.png */; };
+		B0EAB91E225BBC48005ED242 /* Intro.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB917225BBC48005ED242 /* Intro.mp3 */; };
+		B0EAB91F225BBC48005ED242 /* Lost.wav in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB918225BBC48005ED242 /* Lost.wav */; };
+		B0EAB920225BBC48005ED242 /* Ladder.wav in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB919225BBC48005ED242 /* Ladder.wav */; };
+		B0EAB921225BBC48005ED242 /* Snake.wav in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB91A225BBC48005ED242 /* Snake.wav */; };
+		B0EAB922225BBC48005ED242 /* Dice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB91B225BBC48005ED242 /* Dice.mp3 */; };
+		B0EAB923225BBC48005ED242 /* Gameflow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB91C225BBC48005ED242 /* Gameflow.mp3 */; };
+		B0EAB924225BBC48005ED242 /* Move.wav in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB91D225BBC48005ED242 /* Move.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +52,16 @@
 		B0EAB8FE225BA945005ED242 /* SnakeAndLadderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnakeAndLadderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EAB902225BA945005ED242 /* SnakeAndLadderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeAndLadderTests.swift; sourceTree = "<group>"; };
 		B0EAB904225BA945005ED242 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0EAB911225BB084005ED242 /* Gameboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Gameboard.png; path = Assets/Gameboard.png; sourceTree = SOURCE_ROOT; };
+		B0EAB913225BB3F2005ED242 /* Player1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player1.png; path = Assets/Player1.png; sourceTree = SOURCE_ROOT; };
+		B0EAB915225BB675005ED242 /* Player2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Player2.png; path = Assets/Player2.png; sourceTree = SOURCE_ROOT; };
+		B0EAB917225BBC48005ED242 /* Intro.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Intro.mp3; path = Assets/Intro.mp3; sourceTree = SOURCE_ROOT; };
+		B0EAB918225BBC48005ED242 /* Lost.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Lost.wav; path = Assets/Lost.wav; sourceTree = SOURCE_ROOT; };
+		B0EAB919225BBC48005ED242 /* Ladder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Ladder.wav; path = Assets/Ladder.wav; sourceTree = SOURCE_ROOT; };
+		B0EAB91A225BBC48005ED242 /* Snake.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Snake.wav; path = Assets/Snake.wav; sourceTree = SOURCE_ROOT; };
+		B0EAB91B225BBC48005ED242 /* Dice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Dice.mp3; path = Assets/Dice.mp3; sourceTree = SOURCE_ROOT; };
+		B0EAB91C225BBC48005ED242 /* Gameflow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Gameflow.mp3; path = Assets/Gameflow.mp3; sourceTree = SOURCE_ROOT; };
+		B0EAB91D225BBC48005ED242 /* Move.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Move.wav; path = Assets/Move.wav; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				B0EAB8E7225BA941005ED242 /* AppDelegate.swift */,
+				B0EAB90E225BB04C005ED242 /* Assets */,
 				B0EAB8E9225BA941005ED242 /* GameScene.sks */,
 				B0EAB8EB225BA941005ED242 /* Actions.sks */,
 				B0EAB8ED225BA941005ED242 /* GameScene.swift */,
@@ -103,6 +124,39 @@
 				B0EAB904225BA945005ED242 /* Info.plist */,
 			);
 			path = SnakeAndLadderTests;
+			sourceTree = "<group>";
+		};
+		B0EAB90E225BB04C005ED242 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B0EAB910225BB062005ED242 /* Sounds */,
+				B0EAB90F225BB05D005ED242 /* Images */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		B0EAB90F225BB05D005ED242 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B0EAB911225BB084005ED242 /* Gameboard.png */,
+				B0EAB913225BB3F2005ED242 /* Player1.png */,
+				B0EAB915225BB675005ED242 /* Player2.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		B0EAB910225BB062005ED242 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				B0EAB91B225BBC48005ED242 /* Dice.mp3 */,
+				B0EAB91C225BBC48005ED242 /* Gameflow.mp3 */,
+				B0EAB917225BBC48005ED242 /* Intro.mp3 */,
+				B0EAB919225BBC48005ED242 /* Ladder.wav */,
+				B0EAB918225BBC48005ED242 /* Lost.wav */,
+				B0EAB91D225BBC48005ED242 /* Move.wav */,
+				B0EAB91A225BBC48005ED242 /* Snake.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,11 +240,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0EAB923225BBC48005ED242 /* Gameflow.mp3 in Resources */,
+				B0EAB924225BBC48005ED242 /* Move.wav in Resources */,
 				B0EAB8F3225BA941005ED242 /* Main.storyboard in Resources */,
 				B0EAB8EA225BA941005ED242 /* GameScene.sks in Resources */,
 				B0EAB8F5225BA944005ED242 /* Assets.xcassets in Resources */,
+				B0EAB922225BBC48005ED242 /* Dice.mp3 in Resources */,
+				B0EAB914225BB3F2005ED242 /* Player1.png in Resources */,
 				B0EAB8F8225BA944005ED242 /* LaunchScreen.storyboard in Resources */,
+				B0EAB920225BBC48005ED242 /* Ladder.wav in Resources */,
+				B0EAB916225BB675005ED242 /* Player2.png in Resources */,
+				B0EAB91F225BBC48005ED242 /* Lost.wav in Resources */,
+				B0EAB91E225BBC48005ED242 /* Intro.mp3 in Resources */,
+				B0EAB912225BB084005ED242 /* Gameboard.png in Resources */,
 				B0EAB8EC225BA941005ED242 /* Actions.sks in Resources */,
+				B0EAB921225BBC48005ED242 /* Snake.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
