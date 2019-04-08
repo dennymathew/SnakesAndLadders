@@ -11,24 +11,43 @@ import XCTest
 
 class SnakeAndLadderTests: XCTestCase {
 
+    var gameClass = GameScene()
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testPosition1() {
+        let position = gameClass.calculateMovePosition(1)
+        XCTAssertEqual(position, CGPoint(x: 1, y: 1))
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testPosition5() {
+        let position = gameClass.calculateMovePosition(5)
+        XCTAssertEqual(position, CGPoint(x: 1, y: 5))
     }
-
+    
+    func testPosition19() {
+        let position = gameClass.calculateMovePosition(19)
+        XCTAssertEqual(position, CGPoint(x: 2, y: 2))
+    }
+    
+    func testPosition47() {
+        let position = gameClass.calculateMovePosition(47)
+        XCTAssertEqual(position, CGPoint(x: 5, y: 7))
+    }
+    
+    func testPosition10() {
+        let position = gameClass.calculateMovePosition(10)
+        XCTAssertEqual(position, CGPoint(x: 1, y: 10))
+    }
+    
+    func testPosition100() {
+        let position = gameClass.calculateMovePosition(100)
+        XCTAssertEqual(position, CGPoint(x: 10, y: 1))
+    }
 }

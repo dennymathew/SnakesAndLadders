@@ -68,6 +68,9 @@ class GameScene: SKScene {
         setupBoard()
         setupSounds()
         setupPlayers()
+        
+        movePlayer(true, position: 7)
+        movePlayer(false, position: 25)
     }
 }
 
@@ -143,7 +146,7 @@ extension GameScene {
     fileprivate func setupPlayerNodes() {
         
         //Human Sprite Nodes
-        let human = SKSpriteNode(imageNamed: "Player1")
+        human = SKSpriteNode(imageNamed: "Player1")
         let humanSize = board.size.width/20
         human.size = CGSize(width: humanSize, height: humanSize)
         human.position = CGPoint(x: leftX, y: humanPositionLabel.position.y - humanPositionLabel.frame.height/2 - 20 - human.size.height/2)
@@ -152,7 +155,7 @@ extension GameScene {
         addChild(human)
         
         //Computer Sprite Nodes
-        let computer = SKSpriteNode(imageNamed: "Player2")
+        computer = SKSpriteNode(imageNamed: "Player2")
         let computerSize = board.size.width/20
         computer.size = CGSize(width: computerSize, height: computerSize)
         computer.position = CGPoint(x: rightX, y: computerPositionLabel.position.y - computerPositionLabel.frame.height/2 - 20 - computer.size.height/2)
@@ -166,5 +169,88 @@ extension GameScene {
         setupPlayerLabels()
         setupPositionLabels()
         setupPlayerNodes()
+    }
+}
+
+//MARK: - Calculations
+extension GameScene {
+    
+    func calculateMovePoint(_ position: CGFloat) -> CGPoint {
+        
+        let xStart = -board.frame.width/2
+        let yStart = -board.frame.height/2
+        let boxSize = board.size.width/10
+        
+        let row: Int = Int(ceil(position/10.0))
+        var column: Int = 0
+        
+        if Int(position) % 10 == 0 {
+            if (Int(position) / 10) % 2 == 0 {
+                column = 1
+            } else {
+                column = 10
+            }
+        } else if row % 2 == 0 {
+            column = 10 - Int(position) % 10 + 1
+        } else {
+            column = Int(position) % 10
+        }
+        
+        let destinationX = xStart + boxSize/2 + (CGFloat(column - 1) * boxSize)
+        let destinationY = yStart + boxSize/2 + (CGFloat(row - 1) * boxSize)
+        
+        return CGPoint(x: destinationX, y: destinationY)
+    }
+    
+    func movePlayer(_ isHuman: Bool, position: CGFloat) {
+
+        let newPoint = calculateMovePoint(position)
+        let moveAction = SKAction.move(to: newPoint, duration: 1)
+        
+        if isHuman {
+            self.human.run(moveAction) {
+                self.humanPositionLabel.text = "\(self.humanPosition)"
+                
+                //Check for Ladder
+                for key in self.ladderPositions.keys {
+                    if key == Int(position) {
+                        self.humanPosition = self.ladderPositions[key]!
+                        self.movePlayer(true, position: CGFloat(self.humanPosition))
+                        self.run(self.ladderSound)
+                    }
+                }
+                
+                //Check for Snake
+                for key in self.snakePositions.keys {
+                    if key == Int(position) {
+                        self.humanPosition = self.snakePositions[key]!
+                        self.movePlayer(true, position: CGFloat(self.humanPosition))
+                        self.run(self.snakeSound)
+                    }
+                }
+            }
+        } else {
+            self.computer.run(moveAction) {
+                self.computerPositionLabel.text = "\(self.computerPosition)"
+                
+                //Check for Ladder
+                for key in self.ladderPositions.keys {
+                    if key == Int(position) {
+                        self.computerPosition = self.ladderPositions[key]!
+                        self.movePlayer(false, position: CGFloat(self.computerPosition))
+                        self.run(self.ladderSound)
+                    }
+                }
+                
+                //Check for Snake
+                for key in self.snakePositions.keys {
+                    if key == Int(position) {
+                        self.computerPosition = self.snakePositions[key]!
+                        self.movePlayer(false, position: CGFloat(self.computerPosition))
+                        self.run(self.snakeSound)
+                    }
+                }
+            }
+        }
     }
 }
