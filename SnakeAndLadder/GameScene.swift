@@ -68,6 +68,10 @@ class GameScene: SKScene {
         setupSounds()
         setupPlayers()
         
+//        //TODO: - Check Winning Logic
+//        movePlayer(true, position: 98)
+//        humanPosition = 98
+        
         startGame()
     }
 }
@@ -298,6 +302,8 @@ extension GameScene {
         dice.size = CGSize(width: width, height: width)
         
         if isHuman {
+//            //TODO: - Check
+//            rolledDice = 2
             dice.position = CGPoint(x: leftX, y: 0)
         } else {
             dice.position = CGPoint(x: rightX, y: 0)
@@ -397,6 +403,13 @@ extension GameScene {
         
         if isHumanTurn && !isGameOver && !isRolling && moveFinished {
             rollDice(true)
+        }
+        
+        if isGameOver {
+            let gameTitleScene = GameTitleScene(fileNamed: "GameTitleScene")
+            gameTitleScene?.scaleMode = .aspectFill
+            let transition = SKTransition.doorsCloseVertical(withDuration: 1.0)
+            self.view?.presentScene(gameTitleScene!, transition: transition)
         }
     }
 }
