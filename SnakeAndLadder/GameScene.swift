@@ -39,7 +39,6 @@ class GameScene: SKScene {
     var snakeSound = SKAction()
     var ladderSound = SKAction()
     var moveSound = SKAction()
-    var introSound = SKAction()
     var lostSound = SKAction()
     var gameFlowSound = SKAction()
     
@@ -90,7 +89,6 @@ extension GameScene {
         ladderSound = SKAction.playSoundFileNamed("Ladder", waitForCompletion: false)
         moveSound = SKAction.playSoundFileNamed("Move.wav", waitForCompletion: false)
         lostSound = SKAction.playSoundFileNamed("Lost.wav", waitForCompletion: false)
-        introSound = SKAction.playSoundFileNamed("Intro.wav", waitForCompletion: false)
         gameFlowSound = SKAction.playSoundFileNamed("Gameflow.wav", waitForCompletion: false)
     }
     

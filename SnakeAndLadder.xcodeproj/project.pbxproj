@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B09870E2225CA83300B7DFCE /* GameTitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B09870E1225CA83300B7DFCE /* GameTitleScene.sks */; };
+		B09870E4225CA86600B7DFCE /* GameTitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09870E3225CA86600B7DFCE /* GameTitleScene.swift */; };
 		B0EAB8E8225BA941005ED242 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EAB8E7225BA941005ED242 /* AppDelegate.swift */; };
 		B0EAB8EA225BA941005ED242 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB8E9225BA941005ED242 /* GameScene.sks */; };
 		B0EAB8EC225BA941005ED242 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0EAB8EB225BA941005ED242 /* Actions.sks */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B09870E1225CA83300B7DFCE /* GameTitleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameTitleScene.sks; sourceTree = "<group>"; };
+		B09870E3225CA86600B7DFCE /* GameTitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTitleScene.swift; sourceTree = "<group>"; };
 		B0EAB8E4225BA941005ED242 /* SnakeAndLadder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnakeAndLadder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0EAB8E7225BA941005ED242 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0EAB8E9225BA941005ED242 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 				B0EAB8E7225BA941005ED242 /* AppDelegate.swift */,
 				B0EAB90E225BB04C005ED242 /* Assets */,
 				B0EAB8E9225BA941005ED242 /* GameScene.sks */,
+				B09870E1225CA83300B7DFCE /* GameTitleScene.sks */,
+				B09870E3225CA86600B7DFCE /* GameTitleScene.swift */,
 				B0EAB8EB225BA941005ED242 /* Actions.sks */,
 				B0EAB8ED225BA941005ED242 /* GameScene.swift */,
 				B0EAB8EF225BA941005ED242 /* GameViewController.swift */,
@@ -277,6 +283,7 @@
 				B0EAB92D225BDC7A005ED242 /* Dice.png in Resources */,
 				B0EAB916225BB675005ED242 /* Player2.png in Resources */,
 				B0EAB92C225BDC7A005ED242 /* dice_2.png in Resources */,
+				B09870E2225CA83300B7DFCE /* GameTitleScene.sks in Resources */,
 				B0EAB91F225BBC48005ED242 /* Lost.wav in Resources */,
 				B0EAB930225BDC7A005ED242 /* dice_3.png in Resources */,
 				B0EAB91E225BBC48005ED242 /* Intro.mp3 in Resources */,
@@ -301,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0EAB8EE225BA941005ED242 /* GameScene.swift in Sources */,
+				B09870E4225CA86600B7DFCE /* GameTitleScene.swift in Sources */,
 				B0EAB8F0225BA941005ED242 /* GameViewController.swift in Sources */,
 				B0EAB8E8225BA941005ED242 /* AppDelegate.swift in Sources */,
 			);
